@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Layouts and Responsive Design</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color:beige;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: black;
+      color: white;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover {
+      color: whitesmoke;
+    }
+
+    /* Main Content */
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .sidebar {
+      background-color: beige;
+      padding: 20px;
+      box-shadow: 0 4px 6px;
+    }
+
+    .article {
+      background-color: beige;
+      padding: 20px;
+      box-shadow: 0 4px 6px ;
+    }
+
+    /* Footer */
+    footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Media Queries for Responsiveness */
+
+    /* Tablet Layout */
+    @media (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Mobile Layout */
+    @media (max-width: 480px) {
+      nav ul {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .main-content {
+        padding: 10px;
+      }
+
+      .sidebar, .article {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>Sidebar</h3>
+      <p>Links, Ads, or any additional content can go here.</p>
+    </div>
+
+    <!-- Article -->
+    <div class="article">
+      <h1>Welcome to Our Website!</h1>
+      <p>This is an example of a responsive layout using Flexbox and CSS Grid. Resize the browser window to see how the layout adjusts for different screen sizes.</p>
+      <p>We are using media queries to adapt the layout for mobile, tablet, and desktop views.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nellie Wangeci. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
